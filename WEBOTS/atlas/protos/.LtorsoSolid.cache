@@ -1,0 +1,11 @@
+Webots Proto Cache File version 1.5
+protoFileHash: 51b3a9ec710f5286a6be63b9dbeafc2f
+needsRobotAncestor: 0
+baseType: Solid
+slotType: 
+parameters: translation,rotation
+tags: hidden
+license:  Copyright Cyberbotics Ltd. Licensed for use only with Webots.
+licenseUrl:  https://cyberbotics.com/webots_assets_license
+documentationUrl: 
+info: Extracted\sfrom:\nhttps://bitbucket.org/osrf/drcsim/src/c69ecab26a55/ros/atlas_description/urdf/atlas_simple_shapes.urdf\n

@@ -1,0 +1,838 @@
+#VRML_SIM R2020b utf8
+WorldInfo {
+  info [
+    "Atlas sample"
+  ]
+  CFM 1e-07
+  ERP 0.8
+  physics "my_Fphysics"
+  basicTimeStep 8
+  coordinateSystem "NUE"
+  lineScale 0.25
+}
+Viewpoint {
+  orientation -0.12854237465682394 0.9891606891143695 0.0709787928072202 0.8349704352102204
+  position 2.7079793639113774 1.3342674310314777 2.341095442630425
+}
+TexturedBackground {
+  texture "noon_sunny_empty"
+}
+TexturedBackgroundLight {
+  texture "mars"
+  luminosity 2
+}
+Floor {
+  size 1000 1000
+  appearance Parquetry {
+    type "light strip"
+    IBLStrength 0
+  }
+}
+Robot {
+  translation 0 0.93 0
+  rotation 1 0 0 -1.5708
+  children [
+    Group {
+    }
+    DEF Pelvis_S PelvisSolid {
+    }
+    DEF BackLbz HingeJoint {
+      jointParameters HingeJointParameters {
+        axis 0 0 1
+        anchor -0.0125 0 0
+        dampingConstant 0.1
+      }
+      device [
+        RotationalMotor {
+          name "BackLbz"
+          acceleration 0.15
+          maxVelocity 12
+          minPosition -0.610865
+          maxPosition 0.610865
+          maxTorque 124.016
+        }
+        PositionSensor {
+          name "BackLbz_PS"
+        }
+      ]
+      endPoint Solid {
+        translation -0.0125 0 0
+        rotation 0 0 1 0
+        children [
+          LtorsoSolid {
+          }
+          DEF BackMby HingeJoint {
+            jointParameters HingeJointParameters {
+              axis 0 1 0
+              anchor 0 0 0.09
+              dampingConstant 0.1
+            }
+            device [
+              RotationalMotor {
+                name "BackMby"
+                acceleration 0.15
+                maxVelocity 12
+                minPosition -1.2
+                maxPosition 1.28
+                maxTorque 206.843
+              }
+              PositionSensor {
+                name "BackMby_PS"
+              }
+            ]
+            endPoint Solid {
+              translation 0 0 0.09
+              children [
+                MtorsoSolid {
+                }
+                DEF BackUbx HingeJoint {
+                  jointParameters HingeJointParameters {
+                    anchor 0 0 0.05
+                    dampingConstant 0.1
+                  }
+                  device [
+                    RotationalMotor {
+                      name "BackUbx"
+                      acceleration 0.15
+                      maxVelocity 12
+                      minPosition -0.790809
+                      maxPosition 0.790809
+                      maxTorque 94.91
+                    }
+                    PositionSensor {
+                      name "BackUbx_PS"
+                    }
+                  ]
+                  endPoint Solid {
+                    translation 0 0 0.05
+                    rotation 1 0 0 0
+                    children [
+                      DEF Utorso_S UtorsoSolid {
+                      }
+                      DEF LArmUsy HingeJoint {
+                        jointParameters HingeJointParameters {
+                          axis 0 0.5 0.866025
+                          anchor 0.024 0.221 0.289
+                          dampingConstant 0.1
+                        }
+                        device [
+                          RotationalMotor {
+                            name "LArmUsy"
+                            acceleration 0.15
+                            maxVelocity 12
+                            minPosition -1.9635
+                            maxPosition 1.9635
+                            maxTorque 212
+                          }
+                          PositionSensor {
+                            name "LArmUsy_PS"
+                          }
+                        ]
+                        endPoint Solid {
+                          translation 0.024 0.221 0.289
+                          rotation 0 0.5000001748438417 0.8660253028382762 0
+                          children [
+                            LClavSolid {
+                            }
+                            DEF LArmShx HingeJoint {
+                              jointParameters HingeJointParameters {
+                                anchor 0 0.075 0.036
+                                dampingConstant 0.1
+                              }
+                              device [
+                                RotationalMotor {
+                                  name "LArmShx"
+                                  acceleration 0.15
+                                  controlPID 0 0 0
+                                  maxVelocity 12
+                                  minPosition -1.39626
+                                  maxPosition 1.74533
+                                  maxTorque 25
+                                }
+                                PositionSensor {
+                                  name "LArmShx_PS"
+                                }
+                              ]
+                              endPoint Solid {
+                                translation 0 0.075 0.036
+                                rotation 1 0 0 0
+                                children [
+                                  DEF LScap_S LScapSolid {
+                                  }
+                                  DEF LArmEly HingeJoint {
+                                    jointParameters HingeJointParameters {
+                                      axis 0 1 0
+                                      anchor 0 0.185 0
+                                      dampingConstant 0.1
+                                    }
+                                    device [
+                                      RotationalMotor {
+                                        name "LArmEly"
+                                        acceleration 0.15
+                                        maxVelocity 12
+                                        maxPosition 3.14159
+                                        maxTorque 114
+                                      }
+                                      PositionSensor {
+                                        name "LArmEly_PS"
+                                      }
+                                    ]
+                                    endPoint Solid {
+                                      translation 0 0.185 0
+                                      children [
+                                        LUarmSolid {
+                                        }
+                                        DEF LArmElx HingeJoint {
+                                          jointParameters HingeJointParameters {
+                                            anchor 0 0.121 0.013
+                                            dampingConstant 0.1
+                                          }
+                                          device [
+                                            RotationalMotor {
+                                              name "LArmElx"
+                                              acceleration 0.15
+                                              maxVelocity 12
+                                              maxPosition 2.35619
+                                              maxTorque 114
+                                            }
+                                            PositionSensor {
+                                              name "LArmElx_PS"
+                                            }
+                                          ]
+                                          endPoint Solid {
+                                            translation 0 0.121 0.013
+                                            rotation 1 0 0 0
+                                            children [
+                                              DEF LLarm_S LLarmSolid {
+                                              }
+                                              DEF LArmUwy HingeJoint {
+                                                jointParameters HingeJointParameters {
+                                                  axis 0 1 0
+                                                  anchor 0 0.188 -0.013
+                                                  dampingConstant 0.1
+                                                }
+                                                device [
+                                                  RotationalMotor {
+                                                    name "LArmUwy"
+                                                    acceleration 0.15
+                                                    maxVelocity 12
+                                                    minPosition -1.571
+                                                    maxPosition 1.571
+                                                    maxTorque 114
+                                                  }
+                                                  PositionSensor {
+                                                    name "LArmUwy_PS"
+                                                  }
+                                                ]
+                                                endPoint Solid {
+                                                  translation 0 0.188 -0.013
+                                                  children [
+                                                    LFarmSolid {
+                                                    }
+                                                    DEF LArmMwx HingeJoint {
+                                                      jointParameters HingeJointParameters {
+                                                        anchor 0 0.058 0
+                                                        dampingConstant 0.1
+                                                      }
+                                                      device [
+                                                        RotationalMotor {
+                                                          name "LArmMwx"
+                                                          acceleration 0.15
+                                                          maxVelocity 12
+                                                          minPosition -0.436
+                                                          maxPosition 1.571
+                                                          maxTorque 60
+                                                        }
+                                                        PositionSensor {
+                                                          name "LArmMwx_PS"
+                                                        }
+                                                      ]
+                                                      endPoint Solid {
+                                                        translation 0 0.058 0
+                                                        rotation 1 0 0 0
+                                                        children [
+                                                          LHandSolid {
+                                                          }
+                                                        ]
+                                                        physics DEF DEFAULT_PHYSICS Physics {
+                                                          density -1
+                                                          mass 0.001
+                                                          centerOfMass [
+                                                            0 0 0
+                                                          ]
+                                                          inertiaMatrix [
+                                                            1 1 1
+                                                            0 0 0
+                                                          ]
+                                                        }
+                                                      }
+                                                    }
+                                                  ]
+                                                  physics USE DEFAULT_PHYSICS
+                                                }
+                                              }
+                                            ]
+                                            physics USE DEFAULT_PHYSICS
+                                          }
+                                        }
+                                      ]
+                                      physics USE DEFAULT_PHYSICS
+                                    }
+                                  }
+                                ]
+                                physics USE DEFAULT_PHYSICS
+                              }
+                            }
+                          ]
+                          name "LArmUsy"
+                          physics USE DEFAULT_PHYSICS
+                        }
+                      }
+                      DEF NeckAy HingeJoint {
+                        jointParameters HingeJointParameters {
+                          axis 0 1 0
+                          anchor 0.01 0 0.43
+                          dampingConstant 0.1
+                        }
+                        device [
+                          RotationalMotor {
+                            name "NeckAy"
+                            acceleration 0.15
+                            maxVelocity 12
+                            minPosition -0.610865238
+                            maxPosition 1.13446401
+                            maxTorque 5
+                          }
+                          PositionSensor {
+                            name "NeckAy_PS"
+                          }
+                        ]
+                        endPoint Solid {
+                          translation 0.01 0 0.43
+                          children [
+                            HeadMesh {
+                            }
+                          ]
+                          name "NeckAy"
+                          physics USE DEFAULT_PHYSICS
+                        }
+                      }
+                      DEF RArmUsy HingeJoint {
+                        jointParameters HingeJointParameters {
+                          axis 0 0.5 -0.866025
+                          anchor 0.024 -0.221 0.289
+                          dampingConstant 0.1
+                        }
+                        device [
+                          RotationalMotor {
+                            name "RArmUsy"
+                            acceleration 0.15
+                            maxVelocity 12
+                            minPosition -1.9635
+                            maxPosition 1.9635
+                            maxTorque 212
+                          }
+                          PositionSensor {
+                            name "RArmUsy_PS"
+                          }
+                        ]
+                        endPoint Solid {
+                          translation 0.024 -0.221 0.289
+                          rotation 0 0.5000001748438417 -0.8660253028382762 0
+                          children [
+                            RClavSolid {
+                            }
+                            DEF RArmShx HingeJoint {
+                              jointParameters HingeJointParameters {
+                                anchor 0 -0.075 0.036
+                                dampingConstant 0.1
+                              }
+                              device [
+                                RotationalMotor {
+                                  name "RArmShx"
+                                  acceleration 0.15
+                                  controlPID 0 0 0
+                                  maxVelocity 12
+                                  minPosition -1.75
+                                  maxPosition 1.446395495793633
+                                  maxTorque 25
+                                }
+                                PositionSensor {
+                                  name "RArmShx_PS"
+                                }
+                              ]
+                              endPoint Solid {
+                                translation 0 -0.075 0.036
+                                rotation 1 0 0 0
+                                children [
+                                  DEF RScap_S RScapSolid {
+                                  }
+                                  DEF RArmEly HingeJoint {
+                                    jointParameters HingeJointParameters {
+                                      axis 0 1 0
+                                      anchor 0 -0.185 0
+                                      dampingConstant 0.1
+                                    }
+                                    device [
+                                      RotationalMotor {
+                                        name "RArmEly"
+                                        acceleration 0.15
+                                        maxVelocity 12
+                                        maxPosition 3.14159
+                                        maxTorque 114
+                                      }
+                                      PositionSensor {
+                                        name "RArmEly_PS"
+                                      }
+                                    ]
+                                    endPoint Solid {
+                                      translation 0 -0.185 0
+                                      children [
+                                        RUarmSolid {
+                                        }
+                                        DEF RArmElx HingeJoint {
+                                          jointParameters HingeJointParameters {
+                                            anchor 0 -0.121 0.013
+                                            dampingConstant 0.1
+                                          }
+                                          device [
+                                            RotationalMotor {
+                                              name "RArmElx"
+                                              acceleration 0.15
+                                              maxVelocity 12
+                                              minPosition -2.35619
+                                              maxTorque 114
+                                            }
+                                            PositionSensor {
+                                              name "RArmElx_PS"
+                                            }
+                                          ]
+                                          endPoint Solid {
+                                            translation 0 -0.121 0.013
+                                            rotation 1 0 0 0
+                                            children [
+                                              DEF RLarm_S RLarmSolid {
+                                              }
+                                              DEF RArmUwy HingeJoint {
+                                                jointParameters HingeJointParameters {
+                                                  axis 0 1 0
+                                                  anchor 0 -0.188 -0.013
+                                                  dampingConstant 0.1
+                                                }
+                                                device [
+                                                  RotationalMotor {
+                                                    name "RArmUwy"
+                                                    acceleration 0.15
+                                                    maxVelocity 12
+                                                    minPosition -1.571
+                                                    maxPosition 1.571
+                                                    maxTorque 114
+                                                  }
+                                                  PositionSensor {
+                                                    name "RArmUwy_PS"
+                                                  }
+                                                ]
+                                                endPoint Solid {
+                                                  translation 0 -0.188 -0.013
+                                                  children [
+                                                    RFarmSolid {
+                                                    }
+                                                    DEF RArmMwx HingeJoint {
+                                                      jointParameters HingeJointParameters {
+                                                        anchor 0 -0.058 0
+                                                        dampingConstant 0.1
+                                                      }
+                                                      device [
+                                                        RotationalMotor {
+                                                          name "RArmMwx"
+                                                          acceleration 0.15
+                                                          maxVelocity 12
+                                                          minPosition -1.571
+                                                          maxPosition 0.436
+                                                          maxTorque 60
+                                                        }
+                                                        PositionSensor {
+                                                          name "RArmMwx_PS"
+                                                        }
+                                                      ]
+                                                      endPoint Solid {
+                                                        translation 0 -0.058 0
+                                                        rotation 1 0 0 0
+                                                        children [
+                                                          RHandSolid {
+                                                          }
+                                                        ]
+                                                        physics USE DEFAULT_PHYSICS
+                                                      }
+                                                    }
+                                                  ]
+                                                  physics USE DEFAULT_PHYSICS
+                                                }
+                                              }
+                                            ]
+                                            physics USE DEFAULT_PHYSICS
+                                          }
+                                        }
+                                      ]
+                                      physics USE DEFAULT_PHYSICS
+                                    }
+                                  }
+                                ]
+                                physics USE DEFAULT_PHYSICS
+                              }
+                            }
+                          ]
+                          name "RArmUsy"
+                          physics USE DEFAULT_PHYSICS
+                        }
+                      }
+                    ]
+                    physics USE DEFAULT_PHYSICS
+                  }
+                }
+              ]
+              physics USE DEFAULT_PHYSICS
+            }
+          }
+        ]
+        name "BackLbz"
+        physics USE DEFAULT_PHYSICS
+      }
+    }
+    DEF LLegUhz HingeJoint {
+      jointParameters HingeJointParameters {
+        axis 0 0 1
+        anchor 0 0.089 0
+        dampingConstant 0.1
+      }
+      device [
+        RotationalMotor {
+          name "LLegUhz"
+          acceleration 0.15
+          maxVelocity 12
+          minPosition -0.32
+          maxPosition 1.14
+          maxTorque 110
+        }
+        PositionSensor {
+          name "LLegUhz_PS"
+        }
+      ]
+      endPoint Solid {
+        translation 0 0.089 0
+        rotation 0 0 1 0
+        children [
+          LUglutSolid {
+          }
+          DEF LLegMhx HingeJoint {
+            jointParameters HingeJointParameters {
+              dampingConstant 0.1
+            }
+            device [
+              RotationalMotor {
+                name "LLegMhx"
+                acceleration 0.15
+                maxVelocity 12
+                minPosition -0.47
+                maxPosition 0.495
+                maxTorque 180
+              }
+              PositionSensor {
+                name "LLegMhx_PS"
+              }
+            ]
+            endPoint Solid {
+              rotation 1 0 0 0
+              children [
+                LLglutSolid {
+                }
+                DEF LLegLhy HingeJoint {
+                  jointParameters HingeJointParameters {
+                    axis 0 1 0
+                    anchor 0.05 0 -0.05
+                    dampingConstant 0.1
+                  }
+                  device [
+                    RotationalMotor {
+                      name "LLegLhy"
+                      acceleration 0.15
+                      maxVelocity 12
+                      minPosition -1.75
+                      maxPosition 0.524
+                      maxTorque 260
+                    }
+                    PositionSensor {
+                      name "LLegLhy_PS"
+                    }
+                  ]
+                  endPoint Solid {
+                    translation 0.05 0 -0.05
+                    children [
+                      DEF LUleg_S LUlegSolid {
+                      }
+                      DEF LLegKny HingeJoint {
+                        jointParameters HingeJointParameters {
+                          axis 0 1 0
+                          anchor -0.05 0 -0.374
+                          dampingConstant 0.1
+                        }
+                        device [
+                          RotationalMotor {
+                            name "LLegKny"
+                            acceleration 0.15
+                            maxVelocity 12
+                            maxPosition 2.45
+                            maxTorque 220
+                          }
+                          PositionSensor {
+                            name "LLegKny_PS"
+                          }
+                        ]
+                        endPoint Solid {
+                          translation -0.05 0 -0.374
+                          children [
+                            DEF LLleg_S LLlegSolid {
+                            }
+                            DEF LLegUay HingeJoint {
+                              jointParameters HingeJointParameters {
+                                axis 0 1 0
+                                anchor 0 0 -0.422
+                                dampingConstant 0.1
+                              }
+                              device [
+                                RotationalMotor {
+                                  name "LLegUay"
+                                  acceleration 0.15
+                                  maxVelocity 12
+                                  minPosition -0.698
+                                  maxPosition 0.698
+                                  maxTorque 220
+                                }
+                                PositionSensor {
+                                  name "LLegUay_PS"
+                                }
+                              ]
+                              endPoint Solid {
+                                translation 0 0 -0.422
+                                children [
+                                  LTalusSolid {
+                                  }
+                                  DEF LLegLax HingeJoint {
+                                    jointParameters HingeJointParameters {
+                                      dampingConstant 0.1
+                                    }
+                                    device [
+                                      RotationalMotor {
+                                        name "LLegLax"
+                                        acceleration 0.15
+                                        maxVelocity 12
+                                        minPosition -0.436
+                                        maxPosition 0.436
+                                        maxTorque 90
+                                      }
+                                      PositionSensor {
+                                        name "LLegLax_PS"
+                                      }
+                                    ]
+                                    endPoint Solid {
+                                      rotation 1 0 0 0
+                                      children [
+                                        LFootSolid {
+                                        }
+                                      ]
+                                      physics USE DEFAULT_PHYSICS
+                                    }
+                                  }
+                                ]
+                                physics USE DEFAULT_PHYSICS
+                              }
+                            }
+                          ]
+                          physics USE DEFAULT_PHYSICS
+                        }
+                      }
+                    ]
+                    physics USE DEFAULT_PHYSICS
+                  }
+                }
+              ]
+              physics USE DEFAULT_PHYSICS
+            }
+          }
+        ]
+        name "LLegUhz"
+        physics USE DEFAULT_PHYSICS
+      }
+    }
+    DEF RLegUhz HingeJoint {
+      jointParameters HingeJointParameters {
+        axis 0 0 1
+        anchor 0 -0.089 0
+        dampingConstant 0.1
+      }
+      device [
+        RotationalMotor {
+          name "RLegUhz"
+          acceleration 0.15
+          maxVelocity 12
+          minPosition -1.14
+          maxPosition 0.32
+          maxTorque 260
+        }
+        PositionSensor {
+          name "RLegUhz_PS"
+        }
+      ]
+      endPoint Solid {
+        translation 0 -0.089 0
+        rotation 0 0 1 0
+        children [
+          RUglutSolid {
+          }
+          DEF RLegMhx HingeJoint {
+            jointParameters HingeJointParameters {
+              dampingConstant 0.1
+            }
+            device [
+              RotationalMotor {
+                name "RLegMhx"
+                acceleration 0.15
+                maxVelocity 12
+                minPosition -0.495
+                maxPosition 0.47
+                maxTorque 180
+              }
+              PositionSensor {
+                name "RLegMhx_PS"
+              }
+            ]
+            endPoint Solid {
+              rotation 1 0 0 0
+              children [
+                RLglutSolid {
+                }
+                DEF RLegLhy HingeJoint {
+                  jointParameters HingeJointParameters {
+                    axis 0 1 0
+                    anchor 0.05 0 -0.05
+                    dampingConstant 0.1
+                  }
+                  device [
+                    RotationalMotor {
+                      name "RLegLhy"
+                      acceleration 0.15
+                      maxVelocity 12
+                      minPosition -1.745
+                      maxPosition 0.524
+                      maxTorque 260
+                    }
+                    PositionSensor {
+                      name "RLegLhy_PS"
+                    }
+                  ]
+                  endPoint Solid {
+                    translation 0.05 0 -0.05
+                    children [
+                      DEF RUleg_S RUlegSolid {
+                      }
+                      DEF RLegKny HingeJoint {
+                        jointParameters HingeJointParameters {
+                          axis 0 1 0
+                          anchor -0.05 0 -0.374
+                          dampingConstant 0.1
+                        }
+                        device [
+                          RotationalMotor {
+                            name "RLegKny"
+                            acceleration 0.15
+                            maxVelocity 12
+                            maxPosition 2.45
+                            maxTorque 220
+                          }
+                          PositionSensor {
+                            name "RLegKny_PS"
+                          }
+                        ]
+                        endPoint Solid {
+                          translation -0.05 0 -0.374
+                          children [
+                            DEF RLleg_S RLlegSolid {
+                            }
+                            DEF RLegUay HingeJoint {
+                              jointParameters HingeJointParameters {
+                                axis 0 1 0
+                                anchor 0 0 -0.422
+                                dampingConstant 0.1
+                              }
+                              device [
+                                RotationalMotor {
+                                  name "RLegUay"
+                                  acceleration 0.15
+                                  maxVelocity 12
+                                  minPosition -0.698
+                                  maxPosition 0.698
+                                  maxTorque 220
+                                }
+                                PositionSensor {
+                                  name "RLegUay_PS"
+                                }
+                              ]
+                              endPoint Solid {
+                                translation 0 0 -0.422
+                                children [
+                                  RTalusSolid {
+                                  }
+                                  DEF RLegLax HingeJoint {
+                                    jointParameters HingeJointParameters {
+                                      dampingConstant 0.1
+                                    }
+                                    device [
+                                      RotationalMotor {
+                                        name "RLegLax"
+                                        acceleration 0.15
+                                        maxVelocity 12
+                                        minPosition -0.436
+                                        maxPosition 0.436
+                                        maxTorque 90
+                                      }
+                                      PositionSensor {
+                                        name "RLegLax_PS"
+                                      }
+                                    ]
+                                    endPoint Solid {
+                                      rotation 1 0 0 0
+                                      children [
+                                        RFootSolid {
+                                        }
+                                      ]
+                                      physics USE DEFAULT_PHYSICS
+                                    }
+                                  }
+                                ]
+                                physics USE DEFAULT_PHYSICS
+                              }
+                            }
+                          ]
+                          physics USE DEFAULT_PHYSICS
+                        }
+                      }
+                    ]
+                    physics USE DEFAULT_PHYSICS
+                  }
+                }
+              ]
+              physics USE DEFAULT_PHYSICS
+            }
+          }
+        ]
+        name "RLegUhz"
+        physics USE DEFAULT_PHYSICS
+      }
+    }
+  ]
+  name "Atlas"
+  model "Boston Dynamics Atlas"
+  physics USE DEFAULT_PHYSICS
+  controller "SC_add_incr_force"
+  supervisor TRUE
+}
