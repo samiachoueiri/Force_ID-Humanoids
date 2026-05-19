@@ -1,0 +1,25 @@
+car accident prediction 
+rehabilitation robotics and mechatronics
+suicide prdiction
+robts for use in autism research (deep learning)
+
+
+safer driving
+	cars are connected to eachother 
+	user safety
+	no mobile in the car
+	alcohol testing
+	how alert the driver is (concentration)
+	accident prediction
+
+study of the stabilization of a humanoid
+	come up with a plat for where u input parameters (links, joints, actuators)
+	given the design we can see if this is applicable or not
+
+3d object reconstruction 
+*already found some devices but we can go through the theory
+
+
+
+
+	

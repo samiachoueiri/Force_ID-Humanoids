@@ -1,0 +1,1 @@
+Mifsud, Alexis & Benallegue, Mehdi & Lamiraux, Florent. (2015). Estimation of contact forces and floating base kinematics of a humanoid robot using only Inertial Measurement Units. 3374-3379. 10.1109/IROS.2015.7353847. 

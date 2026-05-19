@@ -1,0 +1,5 @@
+Xu, Yuan & Mellmann, Heinrich. (2010). Adaptive Motion Control: Dynamic Kick for a Humanoid Robot. 6359. 392-399. 10.1007/978-3-642-16111-7_45. Automatic, full body motion generation for humanoid robots presents a formidable computational challenge. The kicking motion
+is one of the most important motions in a soccer game. However, at the current state the most common approaches of implementing
+this motion are based on key frame technique. Such solutions are inflexible and cost a lot of time to adjust robot’s position.
+In this paper we present an approach for adaptive control of the motions. We implemented our approach in order to solve the
+task of kicking the ball on a humanoid robot Nao. The approach was tested both in simulation and on a real robot.
