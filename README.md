@@ -18,6 +18,8 @@ The full pipeline involves:
 - Performing cross-correlation and signal analysis for force intensity estimation
 
 ## Repository Structure
+
+```
 Force_ID-Humanoids/
 ├── ICARA2023 paper/         # Conference paper (PDF, DOCX, and presentation slides)
 ├── ROS/                     # ROS learning materials and tutorials (PowerPoints, reference book)
@@ -39,7 +41,7 @@ Force_ID-Humanoids/
 ├── thesis proposal/         # Research proposal documents
 ├── thesis report/           # Full thesis document
 └── README.md
-
+```
 ## Methodology
 
 ### 1. Simulation Setup
